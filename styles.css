@@ -16,7 +16,7 @@ main {
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   display: flex;
   align-items: center;
