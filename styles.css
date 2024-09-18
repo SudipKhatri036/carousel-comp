@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+main {
+  max-width: 1440px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel__container {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.slide-btn {
+  font-size: 1.5rem;
+  background-color: white;
+  border: 2px solid transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slide-btn:hover {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+.slides {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.slide img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.slide:hover img {
+  opacity: 0.7;
+}
+
+.slide__content {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  padding: 1rem;
+  color: white;
+  transition: all 0.4s ease-in-out;
+}
+
+.slide__subtitle {
+  font-size: 0.8rem;
+  line-height: 0.9rem;
+  width: 80%;
+  margin-top: 1rem;
+}
+
+.slide:hover .slide__content {
+  transform: translateY(0);
+}
+
+.slide__bullet-cont {
+  position: absolute;
+  bottom: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slide__bullet-cont .bullet-btn {
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: white;
+  border: none;
+  margin-right: 0.3rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.bullet-btn i {
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.bullet-btn.active i {
+  background-color: white;
+}
+
+.slide__bullet-cont .bullet-btn:hover i {
+  background-color: white;
+}
+
+@media only screen and (max-width: 1024px) {
+  .slide img {
+    opacity: 0.7;
+  }
+
+  .slide__content {
+    transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .carousel__container {
+    width: 90%;
+    gap: 1rem;
+  }
+
+  .slide .slide__subtitle {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .carousel__container {
+    width: 100%;
+  }
+
+  .slide-btn {
+    position: absolute;
+    z-index: 2;
+  }
+
+  .next-slide {
+    right: 10px;
+  }
+  .prev-slide {
+    left: 10px;
+  }
+}
